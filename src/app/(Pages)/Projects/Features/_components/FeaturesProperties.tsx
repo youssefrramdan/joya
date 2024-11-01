@@ -1,11 +1,11 @@
 "use client";
-// import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BuyPropertyI } from "../[buyPropertyId]/page";
+import Image from "next/image";
 
-let properties = [] as BuyPropertyI[] ;
+let properties = [] as BuyPropertyI[];
 
 const FeaturesProperties = ({
   featureProperties,
@@ -15,7 +15,6 @@ const FeaturesProperties = ({
   console.log({ featureProperties });
 
   properties = featureProperties;
-
 
   return (
     <div className="block properties page pt-0">
@@ -47,12 +46,12 @@ const FeaturesProperties = ({
                   whileHover={{ filter: "grayscale(0%)" }}
                   transition={{ duration: 0.4 }}
                 >
-                  <img
+                  <Image
                     width={1000}
                     height={667}
                     src={property.card_image}
                     alt={property.title}
-                    className="w-full h-[350px]  md:h-[580px] object-cover rounded-2xl"
+                    className="w-full h-[350px] md:h-[580px] object-cover rounded-2xl"
                   />
                 </motion.div>
 
@@ -74,7 +73,9 @@ const FeaturesProperties = ({
                     </h3>
                   </div>
                   <div className="price absolute right-8 top-14 text-white text-base font-light">
-                    {property.price > 0 ? "AED" + property.price.toLocaleString(): "Request Price"}
+                    {property.price > 0
+                      ? "AED " + property.price.toLocaleString()
+                      : "Request Price"}
                   </div>
                   <div className="action mt-6">
                     <Link

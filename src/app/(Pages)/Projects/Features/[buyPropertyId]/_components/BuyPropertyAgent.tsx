@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
 
 function BuyPropertyAgent() {
   return (
-    <div className="agent -ml-3 transition-all duration-700 ease-in-out transform translate-x-10 inview:opacity-100 inview:translate-x-0 flex flex-wrap items-center mb-10 ">
+    <div className="agent -ml-3 transition-all duration-700 ease-in-out transform translate-x-10 inview:opacity-100 inview:translate-x-0 flex flex-wrap items-center mb-10">
       <div className="image w-36">
         <a href="https://www.joyaproperties.ae/en/member/taz-graves/">
-          <img
+          <Image
             src="/images/projects/agent/01-agent.png"
             alt="Taz Graves"
             width={150}
@@ -16,9 +17,9 @@ function BuyPropertyAgent() {
       </div>
       <div className="informations pl-10 flex-1">
         <div className="description mb-5">
-            <h3 className="text-xl font-semibold text-[#faf8f7]">
+          <h3 className="text-xl font-semibold text-[#faf8f7]">
             <a href="https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-            Nabeel Hammudeh 
+              Nabeel Hammudeh
             </a>
           </h3>
         </div>
@@ -31,7 +32,7 @@ function BuyPropertyAgent() {
                 rel="nofollow"
                 className="flex items-center text-[#faf8f7] hover:text-[#f0ede6] transition-all"
               >
-                <span className="circle  w-10 h-10 flex items-center justify-center rounded-full">
+                <span className="circle w-10 h-10 flex items-center justify-center rounded-full">
                   <i className="fa-solid fa-phone text-[#faf8f7]"></i>
                 </span>
                 <span className="name pl-4 text-sm uppercase font-medium">
@@ -46,7 +47,7 @@ function BuyPropertyAgent() {
                 rel="nofollow"
                 className="flex items-center text-[#faf8f7] hover:text-[#f0ede6] transition-all"
               >
-                <span className="circle  w-10 h-10 flex items-center justify-center rounded-full">
+                <span className="circle w-10 h-10 flex items-center justify-center rounded-full">
                   <i className="fa-brands fa-whatsapp text-[#faf8f7]"></i>
                 </span>
                 <span className="name pl-4 text-sm uppercase font-medium">
@@ -58,7 +59,7 @@ function BuyPropertyAgent() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default BuyPropertyAgent
+export default BuyPropertyAgent;

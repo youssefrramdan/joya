@@ -2,88 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { OffPlanProperty } from "../page";
 import Link from "next/link";
-// const properties = [
-//   {
-//     id: 1,
-//     name: "Burj Vista Penthouse",
-//     location: "Downtown",
-//     price: "AED 65,000,000",
-//     image: "/images/projects/04-1-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/321-burj-vista-penthouse/",
-//   },
-//   {
-//     id: 2,
-//     name: "Address Villas",
-//     location: "Dubai Hills",
-//     price: "AED 28,500,000",
-//     image: "/images/projects/04-2-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/339-address-hillcrest-villas/",
-//   },
-//   {
-//     id: 3,
-//     name: "Lamborghini Villas",
-//     location: "Dubai Hills",
-//     price: "AED 62,500,000",
-//     image: "/images/projects/04-3-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/341-lamborghini-villas/",
-//   },
-//   {
-//     id: 4,
-//     name: "Four Seasons",
-//     location: "Dubai Canal",
-//     price: "AED 38,500,000",
-//     image: "/images/projects/04-4-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/281-four-seasons-2-bed/",
-//   },
-//   {
-//     id: 5,
-//     name: "Vela Residences",
-//     location: "Dubai Canal",
-//     price: "AED 38,500,000",
-//     image: "/images/projects/04-5-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/281-four-seasons-2-bed/",
-//   },
-//   {
-//     id: 6,
-//     name: "Burj Vista Penthouse",
-//     location: "Downtown",
-//     price: "AED 65,000,000",
-//     image: "/images/projects/04-1-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/321-burj-vista-penthouse/",
-//   },
-//   {
-//     id: 7,
-//     name: "Address Villas",
-//     location: "Dubai Hills",
-//     price: "AED 28,500,000",
-//     image: "/images/projects/04-2-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/339-address-hillcrest-villas/",
-//   },
-//   {
-//     id: 8,
-//     name: "Lamborghini Villas",
-//     location: "Dubai Hills",
-//     price: "AED 62,500,000",
-//     image: "/images/projects/04-3-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/341-lamborghini-villas/",
-//   },
-//   {
-//     id: 9,
-//     name: "Four Seasons",
-//     location: "Dubai Canal",
-//     price: "AED 38,500,000",
-//     image: "/images/projects/04-4-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/281-four-seasons-2-bed/",
-//   },
-//   {
-//     id: 10,
-//     name: "Vela Residences",
-//     location: "Dubai Canal",
-//     price: "AED 38,500,000",
-//     image: "/images/projects/04-5-offplan.png",
-//     link: "https://www.joyaproperties.ae/en/item/281-four-seasons-2-bed/",
-//   },
-// ];
+import Image from "next/image";
 
 const OffPlanProperties = ({
   offPlanProperties,
@@ -95,7 +14,7 @@ const OffPlanProperties = ({
     <div className="block properties page pt-0">
       <div className="px-4 md:px-[60px] mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {offPlanProperties&& offPlanProperties.map((property) => (
+          {offPlanProperties && offPlanProperties.map((property) => (
             <motion.div
               key={property._id}
               className="col-lg-6"
@@ -120,7 +39,7 @@ const OffPlanProperties = ({
                   whileHover={{ filter: "grayscale(0%)" }}
                   transition={{ duration: 0.4 }}
                 >
-                  <img
+                  <Image
                     width={1000}
                     height={667}
                     src={property.card_image}

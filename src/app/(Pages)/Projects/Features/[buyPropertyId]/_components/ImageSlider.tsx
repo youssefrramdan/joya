@@ -1,13 +1,13 @@
 // components/ImageSlider.js
 import Slider from "react-slick";
-import { Image } from "../page";
+import Image from "next/image";
+import { Image as ImageType } from "../page";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const ImageSlider = ({ images }: { images: ImageType[] }) => {
+  console.log('images inside image slider', images);
 
-const ImageSlider = ({images}: {images: Image[]}) => {
-  console.log('images inside image slider', images)
-  
   const NextArrow = ({ onClick }: { onClick: () => void }) => {
     return (
       <div
@@ -27,13 +27,11 @@ const ImageSlider = ({images}: {images: Image[]}) => {
       </div>
     );
   };
-  
 
-  // Custom Previous Arrow
-  const PrevArrow = ({ onClick }:{ onClick: () => void }) => {
+  const PrevArrow = ({ onClick }: { onClick: () => void }) => {
     return (
       <div
-        className="absolute top-1/2 left-[-28%] transform -translate-y-1/2  bg-[#041d1a] p-1 rounded-full shadow-md cursor-pointer z-50"
+        className="absolute top-1/2 left-[-28%] transform -translate-y-1/2 bg-[#041d1a] p-1 rounded-full shadow-md cursor-pointer z-50"
         onClick={onClick}
       >
         <svg
@@ -49,6 +47,7 @@ const ImageSlider = ({images}: {images: Image[]}) => {
       </div>
     );
   };
+
   const settings = {
     centerMode: true,
     centerPadding: "0px",
@@ -57,21 +56,21 @@ const ImageSlider = ({images}: {images: Image[]}) => {
     speed: 500,
     arrows: true,
     dots: false,
-    nextArrow: <NextArrow onClick={() => console.log('Next arrow clicked')}/>,
+    nextArrow: <NextArrow onClick={() => console.log('Next arrow clicked')} />,
     prevArrow: <PrevArrow onClick={() => console.log('Prev arrow clicked')} />,
   };
 
-
-
   return (
-    <div className=" w-full h-full max-w-[30rem] md:max-w-6xl mx-auto">
+    <div className="w-full h-full max-w-[30rem] md:max-w-6xl mx-auto">
       <Slider {...settings}>
         {images.map((img, index) => (
           <div key={index} className="flex justify-center">
-            <img
+            <Image
               src={img.secure_url}
               alt={`Slide ${index}`}
-              className="w-full h-full  object-cover  rounded-md mx-auto "
+              width={800}
+              height={500}
+              className="w-full h-full object-cover rounded-md mx-auto"
             />
           </div>
         ))}
